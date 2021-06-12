@@ -1,0 +1,62 @@
+body {
+    background-image: url("https://stepik.org/media/attachments/lesson/374893/world.png");
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+    perspective: 1000px;
+    backface-visibility: hidden;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card {
+    flex: 0 32%;
+    margin: 2%; /* (100-32*3)/2 */
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+}
+
+.front {
+    color: orange;
+    background-color: antiquewhite;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.back {
+    color: antiquewhite;
+    background-color: orange;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+h1, h2, h3 {
+    color: grey;
+    text-align: center;
+    background: white;
+}
